@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Android Island — Privacy Policy</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;max-width:720px;margin:40px auto;padding:0 20px;color:#222;line-height:1.6}
+h1{font-size:28px;margin-bottom:4px}
+h2{font-size:20px;margin-top:32px}
+em{color:#888}
+code{background:#f0f0f0;padding:2px 6px;border-radius:4px;font-size:90%}
+ul{padding-left:20px}
+li{margin-bottom:10px}
+</style>
+</head>
+<body>
+
+<h1>Android Island — Privacy Policy</h1>
+<p><em>Last updated: 2026-05-05</em></p>
+
+<p>Android Island ("the app") is a floating overlay that mimics Apple's
+Dynamic Island. This policy explains exactly what data the app touches
+and what it does <strong>not</strong> do.</p>
+
+<h2>Data we collect</h2>
+<p><strong>None.</strong> The app has no servers, no analytics, no
+tracking SDKs, no advertising libraries. Nothing leaves your device.</p>
+
+<h2>Permissions we request, and why</h2>
+
+<ul>
+  <li><strong>RECORD_AUDIO</strong> — Used solely to obtain real-time
+  FFT (frequency spectrum) data via Android's
+  <code>android.media.audiofx.Visualizer</code> API while music is
+  playing on your device. The audio buffer is read for ~10 ms windows,
+  the spectrum is computed locally on-device, and then the buffer is
+  immediately discarded. <strong>Audio is never recorded, saved,
+  uploaded, or transmitted anywhere.</strong> No microphone audio is
+  captured — only the system's own music output mix is read for
+  visualization.</li>
+
+  <li><strong>READ_PHONE_STATE / ANSWER_PHONE_CALLS</strong> — To
+  display incoming-call information on the island and provide
+  accept/decline buttons. Phone numbers are shown briefly on screen
+  and never logged or transmitted.</li>
+
+  <li><strong>READ_CONTACTS / READ_CALL_LOG</strong> — To resolve
+  caller names from your local contact list. All lookups are
+  on-device only.</li>
+
+  <li><strong>BIND_NOTIFICATION_LISTENER_SERVICE</strong> — To read
+  incoming notifications so they can be displayed on the island.
+  Notification text is rendered to screen; nothing is stored or
+  transmitted.</li>
+
+  <li><strong>BIND_ACCESSIBILITY_SERVICE</strong> — Required by
+  Android to host a <code>TYPE_ACCESSIBILITY_OVERLAY</code> window
+  (the floating island) that remains visible on the lock screen and
+  over system Settings. Also used to suppress the system's heads-up
+  notification animation when the user has opted in. The service
+  inspects only window-state events from <code>com.android.systemui</code>
+  to determine when a heads-up window appears; no other app's content
+  is read.</li>
+
+  <li><strong>POST_NOTIFICATIONS</strong> — Used for the foreground
+  status notification only. No content is generated or sent.</li>
+
+  <li><strong>VIBRATE</strong> — Haptic feedback on island taps.</li>
+
+  <li><strong>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</strong> — Asks
+  the user (via the system dialog) to whitelist the app from
+  battery-freezing background optimisations, otherwise the
+  AccessibilityService is killed and the island stops working.</li>
+</ul>
+
+<h2>Data sharing with third parties</h2>
+<p>None. The app has no third-party SDKs.</p>
+
+<h2>Children's privacy</h2>
+<p>The app is not directed at children under 13 and does not knowingly
+collect any data from anyone.</p>
+
+<h2>Changes to this policy</h2>
+<p>If the data practices ever change, this page will be updated.
+There is no built-in update notification because the app collects
+nothing, so users have no account to notify.</p>
+
+<h2>Contact</h2>
+<p>Questions: <a href="mailto:michaelxzy6@gmail.com">michaelxzy6@gmail.com</a></p>
+
+</body>
+</html>
